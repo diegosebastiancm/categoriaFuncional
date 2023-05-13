@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Noticias</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg" style="background-color: #518E5B;">
+		<a class="navbar-brand" href="/" style="color: #251103;">Notilu</a>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/noticias/nuevo}"
+					style="color: #251103;">Agregar nueva noticia</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<h1>Lista de Noticias</h1>
+		</div>
+	</div>
+	<table class="table table-bordered" border="1">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Titulo</th>
+				<th scope="col">Categoria</th>
+				<th scope="col">Desarrollo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="noticia : ${noticias}">
+				<td th:text="${noticia.id_noticias}">Id</td>
+				<td th:text="${noticia.titulo}">Titulo</td>
+				<td th:text="${noticia.categoria.descripcion}">Categoria</td>
+				<td th:text="${noticia.desarrollo}">Desarrollo</td>
+				<td><a
+					th:href="@{/noticias/{id}/editar(id=${noticia.id_noticias})}"
+					class="btn btn-secondary">Editar</a> <a
+					th:href="@{/noticias/{id}/eliminar(id=${noticia.id_noticias})}"
+					class="btn btn-danger">Eliminar</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
