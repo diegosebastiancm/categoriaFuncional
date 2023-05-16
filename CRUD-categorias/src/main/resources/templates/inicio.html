@@ -13,10 +13,15 @@
 		<a class="navbar-brand" href="/" style="color: #251103;">Notilu</a>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link"
-					th:href="@{/noticias}" style="color: #251103;">Las noticias de Lu</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/noticias}"
+					style="color: #251103;">Las noticias de Lu</a></li>
 			</ul>
 		</div>
 	</nav>
+	<br>
+	<a th:href="@{/categorias}" style="background-color: #B5805A; border: 2px solid #774D30;"
+		class="btn btn-primary btn-lg">Lista de categorías</a>
+	<a th:href="@{/noticias}" style="background-color: #B5805A; border: 2px solid #774D30;"
+		class="btn btn-primary btn-lg">Lista de noticias</a>
 </body>
 </html>
