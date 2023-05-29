@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.entities.Categoria;
 import com.example.demo.entities.Noticias;
 import com.example.demo.repository.CategoriaRepository;
-import com.example.demo.repository.NoticiaRepository;
 
 @Controller
 public class CategoriaController {
@@ -20,8 +19,6 @@ public class CategoriaController {
 	@Autowired
 	CategoriaRepository repositorio;
 	
-	@Autowired
-	NoticiaRepository repositorioNoticias;
 	
 	@GetMapping("/")
 	public String ver(Model modelo) {

@@ -62,6 +62,7 @@ public class NoticiaController {
 		noticiaExistente.setTitulo(noticia.getTitulo());
 		noticiaExistente.setDesarrollo(noticia.getDesarrollo());
 		noticiaExistente.setCategoria(noticia.getCategoria());
+		repositorio.save(noticiaExistente);
 		return "redirect:/noticias";
 	}
 	
